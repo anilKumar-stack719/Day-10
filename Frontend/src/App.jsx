@@ -12,7 +12,7 @@ function App() {
   const { register, handleSubmit, reset } = useForm();
 
   async function getnotes() {
-    const Api = "http://localhost:3000/api/notes";
+    const Api = "https://day-10-3sgb.onrender.com/api/notes";
     const notes = await axios.get(Api);
     // console.log(notes.data.notes);
     setNotes(notes.data.notes);
@@ -43,7 +43,7 @@ function App() {
   // const [editId, setEditId] = useState(null);
 
   async function submitnote(data) {
-    const Api = "http://localhost:3000/api/notes";
+    const Api = "https://day-10-3sgb.onrender.com/api/notes";
 
     if (editId) {
       // Update existing note
@@ -68,7 +68,7 @@ function App() {
   async function handleClick(id) {
     try {
       const deletnote = await axios.delete(
-        "http://localhost:3000/api/notes/" + id,
+        "https://day-10-3sgb.onrender.com/api/notes/" + id,
       );
       getnotes();
       console.log(deletnote.data);
